@@ -1,28 +1,39 @@
 import 'package:flutter/material.dart';
 
+import 'package:first_app/styled_text.dart';
+
+//confia na inferencia do tipo de dados.
+//variaveis = recipientes de dados.
+//final = variavel nao receberá um valor novo.
+
+const startAlignment = Alignment.topLeft;
+const endAlignment = Alignment.bottomRight;
+
+GradientContainer.purple({super.key})
+
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
-  //inicialization work
-  @override //reescrita
+  const GradientContainer( this.color1, this.color2, {super.key});
+
+  final Color color1;
+  final Color color2;
+
+  //inicialization work 
+@override //reescrita
   Widget build(context) {
+    startAlignment = Alignment.topLeft;
     //função
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Color.fromRGBO(33, 150, 243, 1),
-            Color.fromRGBO(28, 126, 206, 1),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          colors: colors,
+          begin: startAlignment,
+          end: endAlignment,
         ),
       ),
       child: const Center(
-          child: Text('João Zavisas',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 28,
-              ))),
-    );
+          child: Image.assets(caminho da imagem)
+          //styledText(),
+           // deixando o texto separado para custom.
+      ),),);
   }
 }
