@@ -1,39 +1,41 @@
 import 'package:flutter/material.dart';
 
-import 'package:first_app/styled_text.dart';
-
-//confia na inferencia do tipo de dados.
-//variaveis = recipientes de dados.
-//final = variavel nao receberá um valor novo.
-
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
 
-GradientContainer.purple({super.key})
-
 class GradientContainer extends StatelessWidget {
-  const GradientContainer( this.color1, this.color2, {super.key});
+  const GradientContainer(this.color1, this.color2, {super.key});
+
+  const GradientContainer.purple({super.key})
+      : color1 = Colors.deepPurple,
+        color2 = Colors.indigo;
 
   final Color color1;
   final Color color2;
 
-  //inicialization work 
-@override //reescrita
+  //reescrita
+  @override
   Widget build(context) {
-    startAlignment = Alignment.topLeft;
     //função
     return Container(
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: colors,
+          colors: [color1, color2],
           begin: startAlignment,
           end: endAlignment,
         ),
       ),
-      child: const Center(
-          child: Image.assets(caminho da imagem)
-          //styledText(),
-           // deixando o texto separado para custom.
-      ),),);
+      child: Center(
+        child: Image.asset('assets/images/dice-2.png'),
+        //styledText(),
+        // deixando o texto separado para custom.
+      ),
+    );
   }
 }
+
+
+
+//confia na inferencia do tipo de dados.
+//variaveis = recipientes de dados.
+//final = variavel nao receberá um valor novo.

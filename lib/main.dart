@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:first_app/gradient_container.dart';
 
@@ -5,16 +7,15 @@ void main() {
   //conceito central - funções / adicionar widget.
   runApp(
     const MaterialApp(
-      home:  Scaffold(
+      home: Scaffold(
         body: GradientContainer(
           Color.fromARGB(255, 33, 5, 109),
           Color.fromARGB(255, 68, 21, 149),
-          )
+        )
       ),
     ),
   );
 }
-
 
 
 
