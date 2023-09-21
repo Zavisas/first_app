@@ -26,7 +26,7 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Image.asset('assets/images/dice-2.png',
+        child: Image.asset("assets/images/dice-2.png",
         width: 200),
         //styledText(),
         // deixando o texto separado para custom.
